@@ -54,7 +54,7 @@ function playRound() {
     let roundWinner;
 
     // Determine round winner
-    roundWinner = determineRoundWinner();
+    roundWinner = determineRoundWinner(userAction, computerAction);
 
     // Notify user of the result
     if (roundWinner === "user"){
@@ -95,7 +95,7 @@ function generateRandomAction(){
 
 
 // *** Determine Round Winner Function
-function determineRoundWinner(){
+function determineRoundWinner(userAction, computerAction){
 
     if (computerAction === userAction){
         roundWinner = "tie";
