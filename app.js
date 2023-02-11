@@ -41,14 +41,14 @@ function playGame(){
 // *** Round Function - Plays a single round of rock, paper, scissors
 function playRound() {
 
-    // Generate random action (rock, paper or scissors) for the computer
-    let computerAction = getComputerAction();
+    // Generate random choice (rock, paper or scissors) for the computer
+    let computerChoice = getcomputerChoice();
 
-    // Get action input from user (rock, paper or scissors)
-    let userAction = (prompt("Rock, paper, or scissors?")).toLowerCase();
+    // Get user's choice from user (rock, paper or scissors)
+    let userChoice = (prompt("Rock, paper, or scissors?")).toLowerCase();
 
     // Determine round winner
-    let roundWinner = determineRoundWinner(userAction, computerAction);
+    let roundWinner = determineRoundWinner(userChoice, computerChoice);
 
     // Display winner of the round
     displayRoundWinner(roundWinner);
@@ -58,39 +58,39 @@ function playRound() {
 }
 
 
-// *** Get Computer Action Function - Generates a random action (rock, paper or scissors) for the computer
-function getComputerAction(){
+// *** Get Computer Choice Function - Generates a random choice (rock, paper or scissors) for the computer
+function getcomputerChoice(){
 
-    let computerAction;
-    
+    let computerChoice;
+
     let randomNumber = Math.floor((Math.random() * 30) + 1);
 
     if (randomNumber <= 10){
-        computerAction = "rock"
+        computerChoice = "rock"
     }
 
     else if (randomNumber <= 20){
-        computerAction = "paper"
+        computerChoice = "paper"
     }
 
     else {
-        computerAction = "scissors"
+        computerChoice = "scissors"
     }
 
-    return computerAction;
+    return computerChoice;
 }
 
 
 // *** Determine Round Winner Function
-function determineRoundWinner(userAction, computerAction){
+function determineRoundWinner(userChoice, computerChoice){
 
-    if (computerAction === userAction){
+    if (computerChoice === userChoice){
         roundWinner = "tie";
     }
 
-    else if ((computerAction === "scissors" && userAction === "rock") || 
-             (computerAction === "rock" && userAction === "paper") ||
-             (computerAction === "paper" && userAction === "scissors")){
+    else if ((computerChoice === "scissors" && userChoice === "rock") || 
+             (computerChoice === "rock" && userChoice === "paper") ||
+             (computerChoice === "paper" && userChoice === "scissors")){
 
         roundWinner = "user";
     }
