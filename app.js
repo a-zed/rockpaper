@@ -60,7 +60,7 @@ function round() {
     }
 
     // Get action input from user (rock, paper or scissors) and store in variable
-    let user_action = toLowerCase(prompt("Rock, paper, or scissors?"))
+    let user_action = (prompt("Rock, paper, or scissors?")).toLowerCase();
 
     // Declare variable to store round winner
     let round_winner;
