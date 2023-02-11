@@ -1,6 +1,5 @@
-
-// *** Game Function ***
-function game(){
+// *** Game Function (IIFE) ***
+(function game(){
 
     // Get number of rounds user wants to play
     let rounds = parseInt(prompt("How many rounds do you want to play?", "5"));
@@ -36,10 +35,11 @@ function game(){
     else {
         console.log("The computer wins the game! Better luck next time.")
     }
-}
+})()
 
 
 // *** Round Function ***
+function round();
 // Generate random action for the computer
 // Get action input from user (rock, paper or scissors)
 // Determine winner
