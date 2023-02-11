@@ -39,9 +39,61 @@
 
 
 // *** Round Function ***
-function round();
-// Generate random action for the computer
-// Get action input from user (rock, paper or scissors)
-// Determine winner
-// Notify user of the result
-// Return winner
+function round() {
+
+    // Declare variable to store computer's action
+    let computer_action;
+
+    // Generate random action for the computer
+    let random_gen = Math.floor((Math.random() * 30) + 1);
+
+    if (random_gen <= 10){
+        computer_action = "rock"
+    }
+
+    else if (random_gen <= 20){
+        computer_action = "paper"
+    }
+
+    else {
+        computer_action = "scissors"
+    }
+
+    // Get action input from user (rock, paper or scissors) and store in variable
+    let user_action = toLowerCase(prompt("Rock, paper, or scissors?"))
+
+    // Declare variable to store round winner
+    let round_winner;
+
+    // Determine round winner
+    if (computer_action === user_action){
+        round_winner = "tie";
+    }
+
+    else if ((computer_action === "scissors" && user_action === "rock") or 
+             (computer_action === "rock" && user_action === "paper") or
+             (computer_action === "paper" && user_action === "scissors")){
+
+        round_winner = "user";
+    }
+
+    else {
+        round_winner = "computer";
+    }
+
+    // Notify user of the result
+    if (round_winner === "user"){
+        console.log("You won this round!");
+    }
+
+    else if (round_winner === "computer"){
+        console.log("You lost this round!");
+    }
+
+    else {
+        console.log("It's a tie!");
+    }
+
+    // Return winner
+    return round_winner;
+}
