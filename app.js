@@ -2,10 +2,10 @@
 function playGame(){
 
     // Get number of rounds user wants to play
-    let rounds = parseInt(prompt("How many rounds do you want to play?", "5"));
+    let roundsToPlay = parseInt(prompt("How many rounds do you want to play?", "5"));
 
     // Calculate number of round wins required to win the game (majority)
-    let winsRequired = Math.floor((rounds / 2) + 1);
+    let roundWinsRequired = Math.floor((roundsToPlay / 2) + 1);
 
     // declare variables to track scores and winner of each round
     let userScore = 0;
@@ -13,7 +13,7 @@ function playGame(){
     let roundWinner;
 
     // While there is no winner
-    while (userScore < winsRequired && computerScore < winsRequired){
+    while (userScore < roundWinsRequired && computerScore < roundWinsRequired){
 
         // Play round and store winner
         roundWinner = playRound();
@@ -41,40 +41,25 @@ function playGame(){
 // *** Round Function - Plays a single round of rock, paper, scissors
 function playRound() {
 
-    // Declare variable to store computer's action
-    let computerAction;
+    // Generate random action (rock, paper or scissors) for the computer
+    let computerAction = getComputerAction();
 
-    // Generate random action for the computer
-    computerAction = generateRandomAction();
-
-    // Get action input from user (rock, paper or scissors) and store in variable
+    // Get action input from user (rock, paper or scissors)
     let userAction = (prompt("Rock, paper, or scissors?")).toLowerCase();
 
-    // Declare variable to store round winner
-    let roundWinner;
-
     // Determine round winner
-    roundWinner = determineRoundWinner(userAction, computerAction);
+    let roundWinner = determineRoundWinner(userAction, computerAction);
 
-    // Notify user of the result
-    if (roundWinner === "user"){
-        console.log("You won this round!");
-    }
-
-    else if (roundWinner === "computer"){
-        console.log("You lost this round!");
-    }
-
-    else {
-        console.log("It's a tie!");
-    }
+    // Display winner of the round
+    displayRoundWinner(roundWinner);
 
     // Return winner
     return roundWinner;
 }
 
-// *** Random Action Function - Generates a random action (rock, paper or scissors) for the computer
-function generateRandomAction(){
+
+// *** Get Computer Action Function - Generates a random action (rock, paper or scissors) for the computer
+function getComputerAction(){
 
     let randomNumber = Math.floor((Math.random() * 30) + 1);
 
@@ -113,4 +98,21 @@ function determineRoundWinner(userAction, computerAction){
     }
 
     return roundWinner;
+}
+
+
+// *** Display Round Winner Function
+function displayRoundWinner(roundWinner){
+
+    if (roundWinner === "user"){
+        console.log("You won this round!");
+    }
+
+    else if (roundWinner === "computer"){
+        console.log("You lost this round!");
+    }
+
+    else {
+        console.log("It's a tie!");
+    }
 }
