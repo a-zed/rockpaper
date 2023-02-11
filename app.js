@@ -1,4 +1,4 @@
-// *** Game Function *** This function plays a multi-round game of rock, paper, scissors
+// *** Game Function - Plays a multi-round game of rock, paper, scissors
 function playGame(){
 
     // Get number of rounds user wants to play
@@ -38,26 +38,14 @@ function playGame(){
 }
 
 
-// *** Round Function *** This function plays a single round of rock, paper, scissors
+// *** Round Function - Plays a single round of rock, paper, scissors
 function playRound() {
 
     // Declare variable to store computer's action
     let computerAction;
 
     // Generate random action for the computer
-    let randomAction = Math.floor((Math.random() * 30) + 1);
-
-    if (randomAction <= 10){
-        computerAction = "rock"
-    }
-
-    else if (randomAction <= 20){
-        computerAction = "paper"
-    }
-
-    else {
-        computerAction = "scissors"
-    }
+    computerAction = generateRandomAction();
 
     // Get action input from user (rock, paper or scissors) and store in variable
     let userAction = (prompt("Rock, paper, or scissors?")).toLowerCase();
@@ -96,4 +84,24 @@ function playRound() {
 
     // Return winner
     return roundWinner;
+}
+
+// *** Random Action Function - Generates a random action (rock, paper or scissors) for the computer
+function generateRandomAction(){
+
+    let randomNumber = Math.floor((Math.random() * 30) + 1);
+
+    if (randomNumber <= 10){
+        computerAction = "rock"
+    }
+
+    else if (randomNumber <= 20){
+        computerAction = "paper"
+    }
+
+    else {
+        computerAction = "scissors"
+    }
+
+    return computerAction;
 }
