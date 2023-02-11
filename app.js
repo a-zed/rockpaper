@@ -5,30 +5,30 @@ function game(){
     let rounds = parseInt(prompt("How many rounds do you want to play?", "5"));
 
     // Calculate number of round wins required to win the game (majority)
-    let wins_required = Math.floor((rounds / 2) + 1);
+    let winsRequired = Math.floor((rounds / 2) + 1);
 
     // declare variables to track scores and winner of each round
-    let user_score = 0;
-    let computer_score = 0;
-    let round_winner;
+    let userScore = 0;
+    let computerScore = 0;
+    let roundWinner;
 
     // While there is no winner
-    while (user_score < wins_required && computer_score < wins_required){
+    while (userScore < winsRequired && computerScore < winsRequired){
 
         // Play round and store winner
-        round_winner = round();
+        roundWinner = round();
 
         // Update scores (no score increase if round is a draw)
-        if (round_winner === "computer"){
-            computer_score++;
+        if (roundWinner === "computer"){
+            computerScore++;
         }
 
-        else if (round_winner === "user"){
-            user_score++;
+        else if (roundWinner === "user"){
+            userScore++;
         }
     }
     // Print winner of game
-    if (user_score > computer_score){
+    if (userScore > computerScore){
         console.log("You win the game!")
     }
 
@@ -42,51 +42,51 @@ function game(){
 function round() {
 
     // Declare variable to store computer's action
-    let computer_action;
+    let computerAction;
 
     // Generate random action for the computer
-    let random_gen = Math.floor((Math.random() * 30) + 1);
+    let randomAction = Math.floor((Math.random() * 30) + 1);
 
-    if (random_gen <= 10){
-        computer_action = "rock"
+    if (randomAction <= 10){
+        computerAction = "rock"
     }
 
-    else if (random_gen <= 20){
-        computer_action = "paper"
+    else if (randomAction <= 20){
+        computerAction = "paper"
     }
 
     else {
-        computer_action = "scissors"
+        computerAction = "scissors"
     }
 
     // Get action input from user (rock, paper or scissors) and store in variable
-    let user_action = (prompt("Rock, paper, or scissors?")).toLowerCase();
+    let userAction = (prompt("Rock, paper, or scissors?")).toLowerCase();
 
     // Declare variable to store round winner
-    let round_winner;
+    let roundWinner;
 
     // Determine round winner
-    if (computer_action === user_action){
-        round_winner = "tie";
+    if (computerAction === userAction){
+        roundWinner = "tie";
     }
 
-    else if ((computer_action === "scissors" && user_action === "rock") || 
-             (computer_action === "rock" && user_action === "paper") ||
-             (computer_action === "paper" && user_action === "scissors")){
+    else if ((computerAction === "scissors" && userAction === "rock") || 
+             (computerAction === "rock" && userAction === "paper") ||
+             (computerAction === "paper" && userAction === "scissors")){
 
-        round_winner = "user";
+        roundWinner = "user";
     }
 
     else {
-        round_winner = "computer";
+        roundWinner = "computer";
     }
 
     // Notify user of the result
-    if (round_winner === "user"){
+    if (roundWinner === "user"){
         console.log("You won this round!");
     }
 
-    else if (round_winner === "computer"){
+    else if (roundWinner === "computer"){
         console.log("You lost this round!");
     }
 
@@ -95,5 +95,5 @@ function round() {
     }
 
     // Return winner
-    return round_winner;
+    return roundWinner;
 }
