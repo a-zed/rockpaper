@@ -70,8 +70,8 @@ function round() {
         round_winner = "tie";
     }
 
-    else if ((computer_action === "scissors" && user_action === "rock") or 
-             (computer_action === "rock" && user_action === "paper") or
+    else if ((computer_action === "scissors" && user_action === "rock") || 
+             (computer_action === "rock" && user_action === "paper") ||
              (computer_action === "paper" && user_action === "scissors")){
 
         round_winner = "user";
