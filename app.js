@@ -61,6 +61,8 @@ function playRound() {
 // *** Get Computer Action Function - Generates a random action (rock, paper or scissors) for the computer
 function getComputerAction(){
 
+    let computerAction;
+    
     let randomNumber = Math.floor((Math.random() * 30) + 1);
 
     if (randomNumber <= 10){
