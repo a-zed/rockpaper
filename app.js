@@ -1,4 +1,4 @@
-// *** Game Function (IIFE) ***
+// *** Game Function *** This function plays a multi-round game of rock, paper, scissors
 function playGame(){
 
     // Get number of rounds user wants to play
@@ -38,7 +38,7 @@ function playGame(){
 }
 
 
-// *** Round Function ***
+// *** Round Function *** This function plays a single round of rock, paper, scissors
 function playRound() {
 
     // Declare variable to store computer's action
