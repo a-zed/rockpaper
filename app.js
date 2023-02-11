@@ -29,11 +29,11 @@ function playGame(){
     }
     // Print winner of game
     if (userScore > computerScore){
-        console.log("You win the game!")
+        console.log("...and you've now won the game!")
     }
 
     else {
-        console.log("The computer wins the game! Better luck next time.")
+        console.log("...and the computer has now won the game! Better luck next time.")
     }
 }
 
