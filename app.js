@@ -84,6 +84,8 @@ function getcomputerChoice(){
 // *** Determine Round Winner Function
 function determineRoundWinner(userChoice, computerChoice){
 
+    let roundWinner;
+
     if (computerChoice === userChoice){
         roundWinner = "tie";
     }
