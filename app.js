@@ -1,5 +1,5 @@
 // *** Game Function (IIFE) ***
-function game(){
+function playGame(){
 
     // Get number of rounds user wants to play
     let rounds = parseInt(prompt("How many rounds do you want to play?", "5"));
@@ -16,7 +16,7 @@ function game(){
     while (userScore < winsRequired && computerScore < winsRequired){
 
         // Play round and store winner
-        roundWinner = round();
+        roundWinner = playRound();
 
         // Update scores (no score increase if round is a draw)
         if (roundWinner === "computer"){
@@ -39,7 +39,7 @@ function game(){
 
 
 // *** Round Function ***
-function round() {
+function playRound() {
 
     // Declare variable to store computer's action
     let computerAction;
