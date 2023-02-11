@@ -54,20 +54,7 @@ function playRound() {
     let roundWinner;
 
     // Determine round winner
-    if (computerAction === userAction){
-        roundWinner = "tie";
-    }
-
-    else if ((computerAction === "scissors" && userAction === "rock") || 
-             (computerAction === "rock" && userAction === "paper") ||
-             (computerAction === "paper" && userAction === "scissors")){
-
-        roundWinner = "user";
-    }
-
-    else {
-        roundWinner = "computer";
-    }
+    roundWinner = determineRoundWinner();
 
     // Notify user of the result
     if (roundWinner === "user"){
@@ -104,4 +91,26 @@ function generateRandomAction(){
     }
 
     return computerAction;
+}
+
+
+// *** Determine Round Winner Function
+function determineRoundWinner(){
+
+    if (computerAction === userAction){
+        roundWinner = "tie";
+    }
+
+    else if ((computerAction === "scissors" && userAction === "rock") || 
+             (computerAction === "rock" && userAction === "paper") ||
+             (computerAction === "paper" && userAction === "scissors")){
+
+        roundWinner = "user";
+    }
+
+    else {
+        roundWinner = "computer";
+    }
+
+    return roundWinner;
 }
