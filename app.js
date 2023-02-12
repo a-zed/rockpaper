@@ -42,7 +42,7 @@ function playGame(){
 function playRound() {
 
     // Generate random choice (rock, paper or scissors) for the computer
-    let computerChoice = getcomputerChoice();
+    let computerChoice = getComputerChoice();
 
     // Get user's choice from user (rock, paper or scissors)
     let userChoice = (prompt("Rock, paper, or scissors?")).toLowerCase();
@@ -59,7 +59,7 @@ function playRound() {
 
 
 // *** Get Computer Choice Function - Generates a random choice (rock, paper or scissors) for the computer
-function getcomputerChoice(){
+function getComputerChoice(){
 
     let computerChoice;
 
