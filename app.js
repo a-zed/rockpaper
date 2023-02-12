@@ -7,7 +7,7 @@ function playGame(){
     // Calculate number of round wins required to win the game (majority)
     let roundWinsRequired = Math.floor((roundsToPlay / 2) + 1);
 
-    // declare variables to track scores and winner of each round
+    // Declare variables to track scores and winner of each round
     let userScore = 0;
     let computerScore = 0;
     let roundWinner;
