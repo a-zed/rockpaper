@@ -51,7 +51,8 @@ async function playGame(){
       }
   
       // Display current score
-      console.log(`Current score: User ${userScore} - Computer ${computerScore}`);
+      const currentScore = document.querySelector("#currentScore");
+      currentScore.textContent = `Current score: User ${userScore} - Computer ${computerScore}`;
   
       // Check if the game is over
       if (userScore === roundWinsRequired || computerScore === roundWinsRequired) {
@@ -63,10 +64,13 @@ async function playGame(){
     }
   
     // Print winner of game
+    const finalResult = document.querySelector("#finalResult");
+
     if (userScore > computerScore) {
-      console.log("...and you've now won the game!");
+        finalResult.textContent = "You've won the game! Go you";
+    
     } else {
-      console.log("...and the computer has now won the game! Better luck next time.");
+      finalResult.textContent = "The computer has won the game! Better luck next time.";
     }
   }
   
@@ -141,15 +145,17 @@ function determineRoundWinner(userChoice, computerChoice){
 // *** Display Round Winner Function
 function displayRoundWinner(roundWinner){
 
+    const roundResult = document.querySelector("#roundResult");
+
     if (roundWinner === "user"){
-        console.log("You won this round!");
+        roundResult.textContent = "You won this round!";
     }
 
     else if (roundWinner === "computer"){
-        console.log("You lost this round!");
+        roundResult.textContent = "You lost this round!";
     }
 
     else {
-        console.log("It's a tie!");
+        roundResult.textContent = "You tied this round!";
     }
 }

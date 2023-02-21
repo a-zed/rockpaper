@@ -101,3 +101,7 @@ button:hover {
   width: 100%;
 }
 
+#results {
+  color: white;
+  text-align: center;
+}
