@@ -2,53 +2,74 @@
 let startButton = document.querySelector("#startGame");
 startButton.addEventListener("click", playGame);
 
-// *** Game Function - Plays a multi-round game of rock, paper, scissors
-function playGame(){
-
+async function playGame(){
     // Get number of rounds user wants to play
-    let roundsToPlay = 5;
-
+    const roundsToPlay = 5;
+  
     // Calculate number of round wins required to win the game (majority)
-    let roundWinsRequired = Math.floor((roundsToPlay / 2) + 1);
-
+    const roundWinsRequired = Math.floor((roundsToPlay / 2) + 1);
+  
     // Declare variables to track scores and winner of each round
     let userScore = 0;
     let computerScore = 0;
-    let roundWinner;
-
-    // create game layout - remove welcome screen elements
-    let welcomeScreen = document.querySelector("#intro");
+  
+    // remove welcome screen elements
+    const welcomeScreen = document.querySelector("#intro");
     welcomeScreen.remove();
-
-    // unhide game layout
-    let gameScreen = document.querySelector("#gameScreen")
+  
+    // show game layout
+    const gameScreen = document.querySelector("#gameScreen");
     gameScreen.style.display = "flex";
-
-
-    // While there is no winner
-    while (userScore < roundWinsRequired && computerScore < roundWinsRequired){
-
-        // Play round and store winner
-        roundWinner = playRound();
-
-        // Update scores (no score increase if round is a draw)
-        if (roundWinner === "computer"){
-            computerScore++;
-        }
-
-        else if (roundWinner === "user"){
-            userScore++;
-        }
+  
+    // store userChoices in a node list 
+    const userChoices = document.querySelectorAll(".userChoice");
+  
+    while (userScore < roundWinsRequired && computerScore < roundWinsRequired) {
+      // Wait for user to make a choice
+      const userChoice = await new Promise(resolve => {
+        userChoices.forEach(choice => {
+          choice.addEventListener("click", () => {
+            resolve(choice.id);
+          }, { once: true });
+        });
+      });
+  
+      // Generate computer choice
+      const computerChoice = getComputerChoice();
+  
+      // Determine round winner
+      const roundWinner = determineRoundWinner(userChoice, computerChoice);
+  
+      // Display round result
+      displayRoundWinner(roundWinner);
+  
+      // Update scores
+      if (roundWinner === "user") {
+        userScore++;
+      } else if (roundWinner === "computer") {
+        computerScore++;
+      }
+  
+      // Display current score
+      console.log(`Current score: User ${userScore} - Computer ${computerScore}`);
+  
+      // Check if the game is over
+      if (userScore === roundWinsRequired || computerScore === roundWinsRequired) {
+        break;
+      }
+  
+      // Delay next round for 1 second
+      await new Promise(resolve => setTimeout(resolve, 1000));
     }
+  
     // Print winner of game
-    if (userScore > computerScore){
-        console.log("...and you've now won the game!")
+    if (userScore > computerScore) {
+      console.log("...and you've now won the game!");
+    } else {
+      console.log("...and the computer has now won the game! Better luck next time.");
     }
-
-    else {
-        console.log("...and the computer has now won the game! Better luck next time.")
-    }
-}
+  }
+  
 
 
 // *** Round Function - Plays a single round of rock, paper, scissors
@@ -86,6 +107,8 @@ function getComputerChoice(){
     else {
         computerChoice = "scissors"
     }
+
+    console.log(computerChoice);
 
     return computerChoice;
 }
