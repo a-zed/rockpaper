@@ -2,7 +2,7 @@
 function playGame(){
 
     // Get number of rounds user wants to play
-    let roundsToPlay = parseInt(prompt("How many rounds do you want to play?", "5"));
+    let roundsToPlay = 5;
 
     // Calculate number of round wins required to win the game (majority)
     let roundWinsRequired = Math.floor((roundsToPlay / 2) + 1);
@@ -39,13 +39,10 @@ function playGame(){
 
 
 // *** Round Function - Plays a single round of rock, paper, scissors
-function playRound() {
+function playRound(userChoice) {
 
     // Generate random choice (rock, paper or scissors) for the computer
     let computerChoice = getComputerChoice();
-
-    // Get user's choice from user (rock, paper or scissors)
-    let userChoice = (prompt("Rock, paper, or scissors?")).toLowerCase();
 
     // Determine round winner
     let roundWinner = determineRoundWinner(userChoice, computerChoice);

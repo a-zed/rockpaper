@@ -1,10 +1,12 @@
 html {
   box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
 }
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+  font-family: inherit;
 }
 
 body {
@@ -15,8 +17,7 @@ body {
   max-width: 100%;
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
-  font-family: "Kumbh Sans", sans-serif;
+  background-color: #000000;
 }
 
 main {
@@ -25,13 +26,13 @@ main {
   flex-flow: column nowrap;
   width: 100%;
   max-width: 100%;
+  min-height: 100vh;
   padding: 20px;
-  flex-grow: 1;
+  justify-content: center;
 }
 
 .buttons {
   display: flex;
-  flex-grow: 1;
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
@@ -39,7 +40,7 @@ main {
   align-content: center;
 }
   
-button {
+.user-input {
   width: 100%;
   max-height: 80px;
   max-width: 160px;
@@ -59,6 +60,31 @@ button {
 
 #scissors {
   background-color: #656a77;
+  color: white;
+}
+
+#startGame {
+  width: 100%;
+  max-height: 120px;
+  max-width: 240px;
+  min-width: 160px;
+  min-height: 80px;
+  margin: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+}
+
+#startGame:hover {
+  transition: 0.7s;
+  background-color: rgb(50, 25, 64);
+  color: white;
+  cursor: pointer;
+}
+
+#intro {
+  text-align: center;
   color: white;
 }
 
