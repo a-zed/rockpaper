@@ -1,3 +1,7 @@
+// when user clicks Start Game button
+let startButton = document.querySelector("#startGame");
+startButton.addEventListener("click", playGame);
+
 // *** Game Function - Plays a multi-round game of rock, paper, scissors
 function playGame(){
 
@@ -11,6 +15,15 @@ function playGame(){
     let userScore = 0;
     let computerScore = 0;
     let roundWinner;
+
+    // create game layout - remove welcome screen elements
+    let welcomeScreen = document.querySelector("#intro");
+    welcomeScreen.remove();
+
+    // unhide game layout
+    let gameScreen = document.querySelector("#gameScreen")
+    gameScreen.style.display = "flex";
+
 
     // While there is no winner
     while (userScore < roundWinsRequired && computerScore < roundWinsRequired){

@@ -39,23 +39,24 @@ main {
   justify-content: center;
   align-content: center;
 }
-  
-.user-input {
-  width: 100%;
-  max-height: 80px;
-  max-width: 160px;
-  min-width: 100px;
-  min-height: 50px;
-  margin: 8px;
-}
 
 #rock {
   background-color: #383127;
   color: white;
 }
 
+#rock:hover {
+  background-color: #291d0e;
+}
+
+
 #paper {
-  background-color: #ededed;
+  background-color: #dcdcdc;
+}
+
+#paper:hover {
+  background-color: #ffffff;
+  color: black;
 }
 
 #scissors {
@@ -63,7 +64,14 @@ main {
   color: white;
 }
 
-#startGame {
+#scissors:hover {
+  background-color: #272b33;
+}
+
+
+
+
+button {
   width: 100%;
   max-height: 120px;
   max-width: 240px;
@@ -76,7 +84,7 @@ main {
   border: none;
 }
 
-#startGame:hover {
+button:hover {
   transition: 0.7s;
   background-color: rgb(50, 25, 64);
   color: white;
@@ -86,5 +94,10 @@ main {
 #intro {
   text-align: center;
   color: white;
+}
+
+#gameScreen {
+  display: none;
+  width: 100%;
 }
 
