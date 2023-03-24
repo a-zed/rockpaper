@@ -23,3 +23,17 @@ function playGame(){
   printWinner(computerScore, humanScore)
 }
 
+
+function playRound(){
+
+  // generate random computer action
+  let computerAction = generateRandomAction();
+
+  let humanAction = prompt("Enter your choice for this round - rock, paper or scissors ");
+
+  let roundWinner = determineRoundWinner(computerAction, humanAction);
+
+  return roundWinner;
+
+}
+
