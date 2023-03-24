@@ -25,7 +25,7 @@ function playGame(){
 
         }
 
-  printWinner(computerScore, humanScore);
+  printGameWinner(computerScore, humanScore);
 }
 
 
@@ -78,7 +78,7 @@ function determineRoundWinner(computerAction, humanAction){
 
 }
 
-function printWinner(computerScore, humanScore){
+function printGameWinner(computerScore, humanScore){
 
   if (computerScore > humanScore){
 
