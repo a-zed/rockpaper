@@ -11,7 +11,7 @@ function playGame(){
 
           let roundWinner = playRoundAndGetWinner();
 
-          console.log(`The ${roundWinner} wins this round`);
+          printRoundWinner(roundWinner);
 
           if (roundWinner === "human"){
 
@@ -78,6 +78,23 @@ function determineRoundWinner(computerAction, humanAction){
 
   return "human";
 
+}
+
+
+function printRoundWinner(roundWinner){
+
+  if (roundWinner === "draw"){
+
+    console.log(`This round is a draw!`);
+    
+  }
+
+  else {
+
+    console.log(`The ${roundWinner} wins this round`);
+
+  }
+  
 }
 
 function printGameWinner(computerScore, humanScore){
