@@ -30,3 +30,23 @@ function playRoundAndGetWinner(){
 
 }
 
+function generateRandomAction(){
+
+  // generate random number from 0 and 2
+  let randomNumber = Math.round(Math.random() * 2)
+
+  if (randomNumber === 0){
+    return "rock";
+  }
+
+  if (randomNumber === 1){
+    return "paper";
+  }
+
+  else {
+    return "scissors";
+  }
+}
+
+
+
