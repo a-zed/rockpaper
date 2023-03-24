@@ -48,5 +48,23 @@ function generateRandomAction(){
   }
 }
 
+function determineRoundWinner(computerAction, humanAction){
+
+  if (computerAction === humanAction){
+
+    return "draw";
+    
+  }
+
+  if ((computerAction === "rock" && humanAction === "scissors") ||
+      (computerAction === "paper" && humanAction === "rock") ||
+      (computerAction === "scissors" && humanAction === "paper")){
+
+        return "computer";
+      }
+
+  return "human";
+
+}
 
 
