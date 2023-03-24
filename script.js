@@ -16,11 +16,11 @@ function playGame(){
           let roundWinner = playRound();
 
           // Update scores
-          updateScores(roundWinner)
+          updateScores(roundWinner);
         }
 
   // print winner
-  printWinner(computerScore, humanScore)
+  printWinner(computerScore, humanScore);
 }
 
 
