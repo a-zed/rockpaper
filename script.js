@@ -9,7 +9,7 @@ function playGame(){
   while(computerScore < winningScore &&
         humanScore < winningScore){
 
-          let roundWinner = playRound();
+          let roundWinner = playRoundAndGetWinner();
 
           updateScores(roundWinner);
         }
@@ -18,7 +18,7 @@ function playGame(){
 }
 
 
-function playRound(){
+function playRoundAndGetWinner(){
 
   let computerAction = generateRandomAction();
 
