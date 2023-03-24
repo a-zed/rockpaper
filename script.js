@@ -11,7 +11,18 @@ function playGame(){
 
           let roundWinner = playRoundAndGetWinner();
 
-          updateScores(roundWinner);
+          if (roundWinner === "human"){
+
+            humanScore++;
+
+          }
+
+          if (roundWinner === "computer"){
+
+            computerScore++;
+
+          }
+
         }
 
   printWinner(computerScore, humanScore);
@@ -53,7 +64,7 @@ function determineRoundWinner(computerAction, humanAction){
   if (computerAction === humanAction){
 
     return "draw";
-    
+
   }
 
   if ((computerAction === "rock" && humanAction === "scissors") ||
@@ -66,5 +77,6 @@ function determineRoundWinner(computerAction, humanAction){
   return "human";
 
 }
+
 
 
