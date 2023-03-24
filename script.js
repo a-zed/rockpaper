@@ -11,6 +11,8 @@ function playGame(){
 
           let roundWinner = playRoundAndGetWinner();
 
+          console.log(`The ${roundWinner} wins this round`);
+
           if (roundWinner === "human"){
 
             humanScore++;
