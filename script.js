@@ -108,8 +108,8 @@ function printRoundWinner(roundWinner, computerAction, humanAction){
 
 function printCurrentScore(computerScore, humanScore){
 
-  console.log(`Computer: ${computerScore}   Human: ${humanScore}`);
-  
+  console.log(`Human: ${humanScore}   Computer: ${computerScore}`);
+
 }
 
 
@@ -118,13 +118,13 @@ function printGameWinner(computerScore, humanScore){
 
   if (computerScore > humanScore){
 
-    console.log(`You lost the game! The computer won ${computerScore}, ${humanScore}`);
+    console.log(`You lost the game! The final score was Human: ${humanScore}   Computer: ${computerScore}`);
 
   }
 
   else {
 
-    console.log(`You won the game! The final score was ${humanScore}, ${computerScore}`);
+    console.log(`You won the game! The final score was Human: ${humanScore}   Computer: ${computerScore}`);
 
   }
 }
