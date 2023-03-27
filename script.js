@@ -118,7 +118,7 @@ function printGameWinner(computerScore, humanScore){
 
   if (computerScore > humanScore){
 
-    console.log(`You lost the game! The final score was Human: ${humanScore}   Computer: ${computerScore}`);
+    console.log(`You lost the game! The final score was --> Human: ${humanScore}   Computer: ${computerScore}`);
 
   }
 
