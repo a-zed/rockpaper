@@ -1,7 +1,7 @@
 // Plays a game of rock, paper, scissors
 function playGame(){
 
-  let winningScore = prompt("What score do you want to play to? ");
+  let winningScore = getScoreRequiredToWin();
 
   let computerScore = 0;
   let humanScore = 0;
@@ -28,6 +28,22 @@ function playGame(){
         }
 
   printGameWinner(computerScore, humanScore);
+}
+
+// Gets the score required to win from user (validated) and returns it
+function getScoreRequiredToWin(){
+
+  let winningScore = parseFloat(prompt("What score do you want to play to? "));
+
+  while (winningScore <= 0 ||
+         Number.isInteger(winningScore) === false){
+
+          winningScore = parseFloat(prompt("What score do you want to play to? (it has to be a positive whole number) "))
+
+         }
+  
+  return winningScore;
+
 }
 
 // Plays a round of rock, paper, scissors. It then prints the round winner and returns it
