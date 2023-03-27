@@ -97,7 +97,7 @@ function printRoundWinner(roundWinner, computerAction, humanAction){
 
   else {
 
-    console.log(`${humanrAction} beats ${computerAction}, so you win this round!`);
+    console.log(`${humanAction} beats ${computerAction}, so you win this round!`);
 
   }
   
