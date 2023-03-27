@@ -11,8 +11,6 @@ function playGame(){
 
           let roundWinner = playRoundAndGetWinner();
 
-          printRoundWinner(roundWinner);
-
           if (roundWinner === "human"){
 
             humanScore++;
@@ -38,6 +36,8 @@ function playRoundAndGetWinner(){
   let humanAction = prompt("Enter your choice for this round - rock, paper or scissors ");
 
   let roundWinner = determineRoundWinner(computerAction, humanAction);
+
+  printRoundWinner(roundWinner, computerAction, humanAction);
 
   return roundWinner;
 
@@ -81,17 +81,23 @@ function determineRoundWinner(computerAction, humanAction){
 }
 
 
-function printRoundWinner(roundWinner){
+function printRoundWinner(roundWinner, computerAction, humanAction){
 
   if (roundWinner === "draw"){
 
-    console.log(`This round is a draw!`);
+    console.log(`You both played ${computerAction}, so this round is a draw!`);
     
   }
 
+  else if (roundWinner === "computer"){
+
+    console.log(`${computerAction} beats ${humanAction}, so the computer wins this round!`);
+    
+  }  
+
   else {
 
-    console.log(`The ${roundWinner} wins this round`);
+    console.log(`${humanrAction} beats ${computerAction}, so you win this round!`);
 
   }
   
