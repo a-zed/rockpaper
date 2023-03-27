@@ -1,4 +1,4 @@
-// Play game
+// Plays a game of rock, paper, scissors
 function playGame(){
 
   let winningScore = prompt("What score do you want to play to? ");
@@ -30,7 +30,7 @@ function playGame(){
   printGameWinner(computerScore, humanScore);
 }
 
-
+// Plays a round of rock, paper, scissors. It then prints the round winner and returns it
 function playRoundAndGetWinner(){
 
   let computerAction = generateRandomAction();
@@ -45,6 +45,7 @@ function playRoundAndGetWinner(){
 
 }
 
+// Generates a random "rock, paper or scissors" action for the computer
 function generateRandomAction(){
 
   // generate random number from 1 to 3
@@ -63,6 +64,7 @@ function generateRandomAction(){
   }
 }
 
+// Determines the round winner and returns it
 function determineRoundWinner(computerAction, humanAction){
 
   if (computerAction === humanAction){
@@ -82,7 +84,7 @@ function determineRoundWinner(computerAction, humanAction){
 
 }
 
-
+// Prints out the round winner
 function printRoundWinner(roundWinner, computerAction, humanAction){
 
   if (roundWinner === "draw"){
@@ -105,15 +107,14 @@ function printRoundWinner(roundWinner, computerAction, humanAction){
   
 }
 
-
+// Prints out the current score
 function printCurrentScore(computerScore, humanScore){
 
   console.log(`Human: ${humanScore}   Computer: ${computerScore}`);
 
 }
 
-
-
+// Prints out the winner of the game
 function printGameWinner(computerScore, humanScore){
 
   if (computerScore > humanScore){
