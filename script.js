@@ -164,4 +164,12 @@ function printGameWinner(computerScore, humanScore){
 }
 
 
+function changeBackgroundImage(){
 
+  let randomNumber = Math.floor(Math.random() * 11) + 1;
+
+  const body = document.querySelector("body");
+
+  body.style.backgroundImage = `url("/images/background${randomNumber}.png")`;
+
+}
