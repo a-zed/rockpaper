@@ -23,6 +23,8 @@ function playGame(){
 
           }
 
+          printCurrentScore(computerScore, humanScore);
+
         }
 
   printGameWinner(computerScore, humanScore);
@@ -102,6 +104,15 @@ function printRoundWinner(roundWinner, computerAction, humanAction){
   }
   
 }
+
+
+function printCurrentScore(computerScore, humanScore){
+
+  console.log(`Computer: ${computerScore}   Human: ${humanScore}`);
+  
+}
+
+
 
 function printGameWinner(computerScore, humanScore){
 
