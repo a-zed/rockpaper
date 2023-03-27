@@ -51,7 +51,7 @@ function playRoundAndGetWinner(){
 
   let computerAction = generateRandomAction();
 
-  let humanAction = prompt("Enter your choice for this round - rock, paper or scissors ");
+  let humanAction = getHumanAction();
 
   let roundWinner = determineRoundWinner(computerAction, humanAction);
 
@@ -78,6 +78,23 @@ function generateRandomAction(){
   else {
     return "scissors";
   }
+}
+
+// Gets rock, paper or scissor action from user (validated)
+function getHumanAction(){
+
+  let humanAction = prompt("Enter your choice for this round - rock, paper or scissors ").toLowerCase();
+
+  while (humanAction !== "rock" &&
+         humanAction !== "paper" &&
+         humanAction !== "scissors"){
+
+     humanAction = prompt("Enter your choice for this round - rock, paper or scissors (making sure to spell it correctly) ");
+
+    }
+
+return humanAction;
+
 }
 
 // Determines the round winner and returns it
