@@ -45,14 +45,14 @@ function playRoundAndGetWinner(){
 
 function generateRandomAction(){
 
-  // generate random number from 0 and 2
-  let randomNumber = Math.round(Math.random() * 2)
+  // generate random number from 1 to 3
+  let randomNumber = Math.floor(Math.random() * 3) + 1;
 
-  if (randomNumber === 0){
+  if (randomNumber === 1){
     return "rock";
   }
 
-  if (randomNumber === 1){
+  if (randomNumber === 2){
     return "paper";
   }
 
