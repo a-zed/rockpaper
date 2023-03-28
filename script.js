@@ -164,16 +164,46 @@ function printGameWinner(computerScore, humanScore){
 }
 
 
-function changeBackgroundImage(){
+
+// Change page background every 10s (IIFE)
+(function() {
+
+  let numberOfBackgroundImages = 5;
 
   const body = document.querySelector("body");
 
-  let randomNumber = Math.floor(Math.random() * 5) + 1;
+  setInterval(changeBackgroundImage, 10000);
 
-  body.style.backgroundImage = `url("/images/background${randomNumber}.png")`;
+  // Change the background image CSS rule to point to new background image
+  function changeBackgroundImage(){
 
-}
+    let newBackgroundNumber = generateNewBackgroundNumber();
+  
+    body.style.backgroundImage = `url("/images/background${newBackgroundNumber}.png")`;
+  
+  }
 
-const body = document.querySelector("body");
+  let previousRandomNumber = null;
 
-body.addEventListener("click", changeBackgroundImage);
+  // Generate a new random background number to use in background image url (there are 5 images in total)
+  function generateNewBackgroundNumber(){
+
+    let randomNumber = Math.floor(Math.random() * numberOfBackgroundImages) + 1;
+
+    while (randomNumber === previousRandomNumber){
+
+      randomNumber = Math.floor(Math.random() * 5) + 1;
+
+    }
+
+    previousRandomNumber = randomNumber;
+
+    return randomNumber;
+  }
+
+})();
+
+
+
+
+
