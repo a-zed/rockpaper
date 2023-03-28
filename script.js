@@ -170,9 +170,27 @@ function printGameWinner(computerScore, humanScore){
 
   let numberOfBackgroundImages = 5;
 
+  preLoadAllBackgroundImages();
+
   const body = document.querySelector("body");
 
   setInterval(changeBackgroundImage, 10000);
+
+
+  // Preload all background images
+  function preLoadAllBackgroundImages(){
+
+    const allBackgroundImages = [];
+
+    for (let i = 0; i < numberOfBackgroundImages; i++){
+
+      allBackgroundImages[i] = new Image();
+
+      allBackgroundImages[i].src = `/images/background${i + 1}.png`;
+
+    }
+
+  }
 
   // Change the background image CSS rule to point to new background image
   function changeBackgroundImage(){
