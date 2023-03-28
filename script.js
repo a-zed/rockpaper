@@ -1,4 +1,4 @@
-// Plays a game of rock, paper, scissors
+// Play a game of rock, paper, scissors
 function playGame(){
 
   let winningScore = getScoreRequiredToWin();
@@ -30,7 +30,7 @@ function playGame(){
   printGameWinner(computerScore, humanScore);
 }
 
-// Gets the score required to win from user (validated) and returns it
+// Get the score required to win from user (validated) and returns it
 function getScoreRequiredToWin(){
 
   let winningScore = parseFloat(prompt("What score do you want to play to? "));
@@ -46,7 +46,7 @@ function getScoreRequiredToWin(){
 
 }
 
-// Plays a round of rock, paper, scissors. It then prints the round winner and returns it
+// Play a round of rock, paper, scissors. It then prints the round winner and returns it
 function playRoundAndGetWinner(){
 
   let computerAction = generateRandomAction();
@@ -61,7 +61,7 @@ function playRoundAndGetWinner(){
 
 }
 
-// Generates a random "rock, paper or scissors" action for the computer
+// Generate a random "rock, paper or scissors" action for the computer
 function generateRandomAction(){
 
   // generate random number from 1 to 3
@@ -80,7 +80,7 @@ function generateRandomAction(){
   }
 }
 
-// Gets rock, paper or scissor action from user (validated)
+// Get rock, paper or scissor action from user (validated)
 function getHumanAction(){
 
   let humanAction = prompt("Enter your choice for this round - rock, paper or scissors ").toLowerCase();
@@ -97,7 +97,7 @@ return humanAction;
 
 }
 
-// Determines the round winner and returns it
+// Determine the round winner and return it
 function determineRoundWinner(computerAction, humanAction){
 
   if (computerAction === humanAction){
@@ -117,7 +117,7 @@ function determineRoundWinner(computerAction, humanAction){
 
 }
 
-// Prints out the round winner
+// Print out the round winner
 function printRoundWinner(roundWinner, computerAction, humanAction){
 
   if (roundWinner === "draw"){
@@ -140,14 +140,14 @@ function printRoundWinner(roundWinner, computerAction, humanAction){
   
 }
 
-// Prints out the current score
+// Print out the current score
 function printCurrentScore(computerScore, humanScore){
 
   console.log(`Human: ${humanScore}   Computer: ${computerScore}`);
 
 }
 
-// Prints out the winner of the game
+// Print out the winner of the game
 function printGameWinner(computerScore, humanScore){
 
   if (computerScore > humanScore){
