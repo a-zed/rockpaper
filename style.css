@@ -119,10 +119,39 @@ body {
     animation: rotate 1s linear infinite;
   }
 
-  /* Hide all not-in-use sections at game start */
+  Hide all not-in-use sections at game start
   .play,
   .win-round,
   .lose-game,
   .win-game {
     display: none;
   }
+
+  img {
+    width: 100%;
+    max-width: 180px;
+    min-width: 40px;
+    margin: 30px 30px;
+  }
+
+  #vs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+
+  .grow { 
+    transition: all .2s ease-in-out; 
+  }
+    
+  .grow:hover { 
+    transform: scale(1.1); 
+  }
+
+  .player-actions{
+    display: flex;
+  }
+
