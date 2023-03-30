@@ -119,14 +119,10 @@ body {
     animation: rotate 1s linear infinite;
   }
 
-  .win {
+  /* Hide all not-in-use sections at game start */
+  .play,
+  .win-round,
+  .lose-game,
+  .win-game {
     display: none;
   }
-
-  .lose {
-    display: none;
-  }
-
-
-  
-  

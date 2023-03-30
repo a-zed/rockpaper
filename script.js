@@ -7,13 +7,14 @@
   let winRoundSection = document.querySelector(".win-round");
   let loseGameSection = document.querySelector(".lose-game");
   let winGameSection = document.querySelector(".win-game");
-  let startButton = document.querySelector(".start");
-  let resetButton = document.querySelector(".reset");
+  let startButton = document.querySelector("#start-button");
+  let resetButton1 = document.querySelector("#reset-button-1");
+  let resetButton2 = document.querySelector("#reset-button-2");
 
   // add event listeners
   startButton.addEventListener("click", playGame);
-  resetButton.addEventListener("click", displayIntroScreen);
-
+  resetButton1.addEventListener("click", displayIntroScreen);
+  resetButton2.addEventListener("click", displayIntroScreen);
 
 
   // function 0-1: play a game of rock, paper, scissors vs the machines
