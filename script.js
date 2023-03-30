@@ -1,4 +1,4 @@
-// Play a game of rock, paper, scissors (IIFE)
+// function 0: play a game of rock, paper, scissors (IIFE)
 (function(){
 
   // assign UI elements to variables
@@ -7,19 +7,47 @@
   let winRoundSection = document.querySelector(".win-round");
   let loseGameSection = document.querySelector(".lose-game");
   let winGameSection = document.querySelector(".win-game");
+  let startButton = document.querySelector(".start");
+  let resetButton = document.querySelector(".reset");
 
-
-
-
-
-  let startButton = document.querySelector(".glow-button");
-
+  // add event listeners
   startButton.addEventListener("click", playGame);
+  resetButton.addEventListener("click", displayIntroScreen);
 
 
+
+  // function 0-1: play a game of rock, paper, scissors vs the machines
   function playGame(){
 
-    createPlayingEnvironment();
+    displayGameScreen();
+
+    let opponentNumber = 1;
+
+
+    // while opponent number is less than or equal to 5
+
+      // play round of rock, paper, scissors
+
+      // if round was lost
+        // display lost screen
+        // exit playGame function
+
+      // display round win screen
+
+      // increment opponent number
+    
+    // display game win screen
+
+
+
+
+
+
+
+    // function 0-1-1: play round of rock, paper, scissors
+
+
+
 
     let winningScore = getScoreRequiredToWin();
   
@@ -51,10 +79,19 @@
   }
 
   // Set up the UI for the rock, paper, scissors game
-  function createPlayingEnvironment(){
+  function displayGameScreen(){
 
     introSection.style.display = "none";
     playSection.style.display = "flex";
+    winRoundSection.style.display = "none";
+    loseGameSection.style.display = "none";
+    winGameSection.style.display = "none";
+  }
+
+  function displayIntroScreen(){
+
+    introSection.style.display = "flex";
+    playSection.style.display = "none";
     winRoundSection.style.display = "none";
     loseGameSection.style.display = "none";
     winGameSection.style.display = "none";
