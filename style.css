@@ -119,12 +119,23 @@ body {
     animation: rotate 1s linear infinite;
   }
 
-  Hide all not-in-use sections at game start
+  /* Hide all not-in-use sections at game start */
   .play,
   .win-round,
+  .draw-round,
   .lose-game,
+  .lose-game-image,
+  .win-game-image,
   .win-game {
     display: none;
+  }
+
+  .cover {
+    background-size: cover;
+  }
+
+  .blur {
+    filter: blur(3px);
   }
 
   img {
