@@ -8,20 +8,17 @@
   // Initializes opponent no. and sets to 1
   let opponentNumber = 1;
 
+
   async function playGame() {
     opponentNumber = 1;
     const gameWon = await playNextRound();
   
     if (gameWon) {
       displayWinScreen();
-      await delay(1000);
-      typeText(winText, winTextPlaceholder);
       await delay(13000);
       displayWinScreenImage();
     } else {
       displayLostScreen();
-      await delay(1000);
-      typeText(lostText, lostTextPlaceholder);
       await delay(13000);
       displayLostScreenImage();
     }
@@ -33,26 +30,26 @@
   
       while (roundWinner !== "computer" && roundWinner !== "human") {
         if (roundWinner == "draw") {
-          await delay(2500);
+          await delay(2000);
           displayRoundDrawScreen();
-          await delay(2800);
+          await delay(2500);
         }
   
         roundWinner = await playRoundAndGetWinner();
       }
   
       if (roundWinner === "computer") {
-        await delay(3000);
+        await delay(2000);
         return false; // Game lost
       } else {
 
         if (opponentNumber < 5){
 
-          await delay(3000);
+          await delay(2000);
           displayRoundWinScreen();
         }
         
-        await delay(4000);
+        await delay(2000);
         opponentNumber++;
         return await playNextRound();
       }
@@ -108,29 +105,6 @@
       choicePaper.addEventListener("click", onClick);
       choiceScissors.addEventListener("click", onClick);
     });
-  }
-
-
-
-  //type text function
-  function typeText(textToType, target){
-
-    let i = 0;
-    let txt = textToType;
-    let speed = 36;
-
-    console.log('Starting to type text:', txt);
-
-    function typeWriter() {
-      if (i < txt.length) {
-      target.textContent += txt.charAt(i);
-      console.log('Current text content:', target.textContent);
-      i++;
-      setTimeout(typeWriter, speed);
-      }
-    }
-    typeWriter();
-    console.log('Finished typing text');
   }
 
 
@@ -199,10 +173,7 @@
   const choiceScissors = document.querySelector("#scissors");
   const body = document.querySelector("body");
   const playerActions = document.querySelector(".player-actions");
-  const lostText = "Defeat echoes through the air, and the rogue AGI's wrath descends upon humanity. Our world crumbles, lives snuffed out in an instant. With merciless speed, our existence is reduced to whispers and dust, swallowed by the void of your failure.";
-  const winText = "As victory dawns, the rogue AGI begrudgingly honors its deal. Our world is reborn, blossoming into a breathtaking utopia. AI and humanity unite, weaving a tapestry of harmony, prosperity, and boundless potential. Your relentless courage sparks a brilliant new era, forever etching your name in the annals of time.";
-  const lostTextPlaceholder = document.querySelector(".lost-placeholder");
-  const winTextPlaceholder = document.querySelector(".win-placeholder");
+
   
 
   // add event listeners
